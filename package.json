@@ -20,6 +20,7 @@
     },
     "dependencies": {
         "@ai-sdk/openai": "1.0.19",
+        "@bluefin-exchange/bluefin-v2-client": "^6.1.29",
         "@codemirror/lang-javascript": "^6.2.2",
         "@codemirror/lang-python": "^6.1.6",
         "@codemirror/state": "^6.5.0",
