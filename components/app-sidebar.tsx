@@ -2,10 +2,12 @@
 
 import type { User } from 'next-auth';
 import { useRouter } from 'next/navigation';
+import { useWallets, useConnectWallet, useCurrentAccount } from '@mysten/dapp-kit';
 
 import { PlusIcon } from '@/components/icons';
 import { SidebarHistory } from '@/components/sidebar-history';
 import { SidebarUserNav } from '@/components/sidebar-user-nav';
+import { SidebarWallet } from '@/components/sidebar-wallet';
 import { Button } from '@/components/ui/button';
 import {
   Sidebar,
@@ -35,7 +37,7 @@ export function AppSidebar({ user }: { user: User | undefined }) {
               className="flex flex-row gap-3 items-center"
             >
               <span className="text-lg font-semibold px-2 hover:bg-muted rounded-md cursor-pointer">
-                Chatbot
+                7K AI
               </span>
             </Link>
             <Tooltip>
@@ -58,10 +60,17 @@ export function AppSidebar({ user }: { user: User | undefined }) {
           </div>
         </SidebarMenu>
       </SidebarHeader>
+
       <SidebarContent>
         <SidebarHistory user={user} />
       </SidebarContent>
-      <SidebarFooter>{user && <SidebarUserNav user={user} />}</SidebarFooter>
+
+      <SidebarFooter>
+        <div className="flex flex-col gap-3">
+          {/* {user && <SidebarUserNav user={user} />} */}
+          <SidebarWallet /> 
+          </div>
+      </SidebarFooter>
     </Sidebar>
   );
 }
