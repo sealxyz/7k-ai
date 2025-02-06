@@ -14,7 +14,7 @@ export class BluefinClient {
     this.client = new BluefinClientV2(
       true,
       process.env.SUI_NETWORK === 'MAINNET' ? Networks.PRODUCTION_SUI : Networks.TESTNET_SUI,
-      process.env.SUI_PRIVATE_KEY!,
+      process.env.SUI_PRIVATE_SEEDPHRASE!,
       'ED25519',
     )
   }
@@ -37,7 +37,7 @@ export class BluefinClient {
    * @param symbol - The symbol of the market to get data for
    * @returns The market data for the given symbol
    */
-  async getMarketData(symbol?: string) {
+  async getTradeMarketData(symbol?: string) {
     const response = await this.client.getMarketData(symbol)
     return response.data
   }
@@ -47,8 +47,15 @@ export class BluefinClient {
    * @param symbol - The symbol of the market to get info for
    * @returns The master info for the given symbol
    */
-  async getMasterInfo(symbol?: string) {
+  async getTradeMasterInfo(symbol?: string) {
     const response = await this.client.getMasterInfo(symbol)
+    return response.data
+  }
+
+  async getTradeClientInfo() {
+    const response = await this.client.getUserPosition({
+      parentAddress: this.client.getPublicAddress(),
+    })
     return response.data
   }
 
@@ -59,9 +66,24 @@ export class BluefinClient {
    * @param symbol - The symbol of the market to get info for
    * @returns The exchange info for the given symbol
    */
-  async getExchangeInfo(): Promise<any> {
+  async getMarketExchangeInfo(): Promise<any> {
     const response = await this.client.getExchangeInfo()
     return response.data
+  }
+
+  /**
+   * Get exchange info
+   * @returns The exchange info
+   */
+  async getExchangeInfo(): Promise<any> {
+    try {
+      const response = await fetch(`${SPOT_API_URL}/info`)
+      console.log(response)
+      return response.json()
+    } catch (error) {
+      console.error(error)
+      return null
+    }
   }
 
   /**

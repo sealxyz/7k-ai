@@ -13,7 +13,7 @@ import { updateDocument } from '@/lib/ai/tools/update-document'
 import { requestSuggestions } from '@/lib/ai/tools/request-suggestions'
 import { getWeather } from '@/lib/ai/tools/get-weather'
 import { getExchangeData } from '@/lib/ai/tools/bluefinExchangeData'
-
+import { getTopAprPools } from '@/lib/ai/tools/bluefinAprPools'
 export const maxDuration = 60
 
 type AllowedTools =
@@ -22,11 +22,12 @@ type AllowedTools =
   | 'requestSuggestions'
   | 'getWeather'
   | 'getExchangeData'
+  | 'getTopAprPools'
 
 const blocksTools: AllowedTools[] = ['createDocument', 'updateDocument', 'requestSuggestions']
 
 const weatherTools: AllowedTools[] = ['getWeather']
-const bluefinExchangeDataTools: AllowedTools[] = ['getExchangeData']
+const bluefinExchangeDataTools: AllowedTools[] = ['getExchangeData', 'getTopAprPools']
 const allTools: AllowedTools[] = [...blocksTools, ...weatherTools, ...bluefinExchangeDataTools]
 
 export async function POST(request: Request) {
@@ -82,6 +83,7 @@ export async function POST(request: Request) {
             model,
           }),
           getExchangeData,
+          getTopAprPools,
         },
         onFinish: async ({ response }) => {
           console.log('ENTRO ACA EN EL ONFINISH')

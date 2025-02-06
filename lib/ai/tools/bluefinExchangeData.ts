@@ -8,16 +8,11 @@ export const getExchangeData = tool({
 
   execute: async () => {
     try {
-      console.log('ENTRO ACA????')
       const bluefinClient = new BluefinClient()
-      console.log(bluefinClient)
 
       const response = await bluefinClient.getExchangeInfo()
 
-      const exchangeData = await response
-      console.log(exchangeData)
-
-      return exchangeData
+      return response
     } catch (error) {
       console.error('Error initializing BluefinClient:', error)
     }
