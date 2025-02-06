@@ -20,6 +20,7 @@
     },
     "dependencies": {
         "@ai-sdk/openai": "1.0.19",
+        "@bluefin-exchange/bluefin-v2-client": "^6.1.29",
         "@codemirror/lang-javascript": "^6.2.2",
         "@codemirror/lang-python": "^6.1.6",
         "@codemirror/state": "^6.5.0",
@@ -103,6 +104,7 @@
         "lint-staged": "^15.4.3",
         "postcss": "^8",
         "tailwindcss": "^3.4.1",
+        "ts-node": "^10.9.2",
         "tsx": "^4.19.1",
         "typescript": "^5.6.3"
     },
