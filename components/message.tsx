@@ -143,6 +143,9 @@ const PurePreviewMessage = ({
                             result={result}
                             isReadonly={isReadonly}
                           />
+                        ) : toolName === 'getExchangeData' ? (
+                          (console.log('ME METI ACA', result),
+                          (<pre>{JSON.stringify(result, null, 2)}</pre>))
                         ) : (
                           <pre>{JSON.stringify(result, null, 2)}</pre>
                         )}
