@@ -30,7 +30,7 @@ export class BluefinClient {
     return this.client.getPublicAddress()
   }
 
-  // TRADE API
+  ///////////////////////////////////////////////////// TRADE API /////////////////////////////////////////////////////
 
   /**
    * Get market data for a given symbol
@@ -52,14 +52,14 @@ export class BluefinClient {
     return response.data
   }
 
-  // SPOT API
+  ///////////////////////////////////////////////////// SPOT API /////////////////////////////////////////////////////
 
   /**
    * Get exchange info for a given symbol
    * @param symbol - The symbol of the market to get info for
    * @returns The exchange info for the given symbol
    */
-  async getExchangeInfo() {
+  async getExchangeInfo(): Promise<any> {
     const response = await this.client.getExchangeInfo()
     return response.data
   }

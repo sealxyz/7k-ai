@@ -32,6 +32,7 @@ export function Chat({
 
   const { messages, setMessages, handleSubmit, input, setInput, append, isLoading, stop, reload } =
     useChat({
+      api: '/api/chat',
       id,
       body: { id, modelId: selectedModelId },
       initialMessages,
