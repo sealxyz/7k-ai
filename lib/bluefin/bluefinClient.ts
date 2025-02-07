@@ -1,6 +1,7 @@
 import { BluefinClient as BluefinClientV2, Networks } from '@bluefin-exchange/bluefin-v2-client'
 import { config } from 'dotenv'
 import { PoolFrequencyFetch, SPOT_API_URL } from './constants'
+import { GetExchangeInfoDto } from './dto'
 
 config({
   path: '.env',
@@ -75,14 +76,13 @@ export class BluefinClient {
    * Get exchange info
    * @returns The exchange info
    */
-  async getExchangeInfo(): Promise<any> {
+  async getExchangeInfo(): Promise<GetExchangeInfoDto> {
     try {
       const response = await fetch(`${SPOT_API_URL}/info`)
-      console.log(response)
-      return response.json()
+      const data = await response.json()
+      return data
     } catch (error) {
-      console.error(error)
-      return null
+      throw new Error('Error getting exchange info', { cause: error })
     }
   }
 

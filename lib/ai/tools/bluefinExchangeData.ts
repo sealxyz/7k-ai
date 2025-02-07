@@ -3,7 +3,8 @@ import { tool } from 'ai'
 import { z } from 'zod'
 
 export const getExchangeData = tool({
-  description: 'Get the current exchange data for Bluefin Exchange',
+  description:
+    'Get the current informational exchange data for Bluefin Exchange. Please transform the json object that will have the following format in a text format: {totalFee: string, totalVolume: string, tvl: string}',
   parameters: z.object({}),
 
   execute: async () => {

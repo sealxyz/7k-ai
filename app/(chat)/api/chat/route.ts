@@ -8,27 +8,14 @@ import { deleteChatById, getChatById, saveChat, saveMessages } from '@/db/querie
 import { generateUUID, getMostRecentUserMessage, sanitizeResponseMessages } from '@/lib/utils'
 
 import { generateTitleFromUserMessage } from '../../actions'
-import { createDocument } from '@/lib/ai/tools/create-document'
-import { updateDocument } from '@/lib/ai/tools/update-document'
-import { requestSuggestions } from '@/lib/ai/tools/request-suggestions'
-import { getWeather } from '@/lib/ai/tools/get-weather'
 import { getExchangeData } from '@/lib/ai/tools/bluefinExchangeData'
 import { getTopAprPools } from '@/lib/ai/tools/bluefinAprPools'
 export const maxDuration = 60
 
-type AllowedTools =
-  | 'createDocument'
-  | 'updateDocument'
-  | 'requestSuggestions'
-  | 'getWeather'
-  | 'getExchangeData'
-  | 'getTopAprPools'
+type AllowedTools = 'getExchangeData' | 'getTopAprPools'
 
-const blocksTools: AllowedTools[] = ['createDocument', 'updateDocument', 'requestSuggestions']
-
-const weatherTools: AllowedTools[] = ['getWeather']
 const bluefinExchangeDataTools: AllowedTools[] = ['getExchangeData', 'getTopAprPools']
-const allTools: AllowedTools[] = [...blocksTools, ...weatherTools, ...bluefinExchangeDataTools]
+const allTools: AllowedTools[] = [...bluefinExchangeDataTools]
 
 export async function POST(request: Request) {
   const { id, messages, modelId }: { id: string; messages: Array<Message>; modelId: string } =
@@ -74,14 +61,6 @@ export async function POST(request: Request) {
         experimental_transform: smoothStream({ chunking: 'word' }),
         experimental_generateMessageId: generateUUID,
         tools: {
-          getWeather,
-          createDocument: createDocument({ session, dataStream, model }),
-          updateDocument: updateDocument({ session, dataStream, model }),
-          requestSuggestions: requestSuggestions({
-            session,
-            dataStream,
-            model,
-          }),
           getExchangeData,
           getTopAprPools,
         },
