@@ -25,10 +25,18 @@ export class SuiClient {
    * @param address - user address
    * @returns
    */
-  async getUserPositions(address: string) {
-    let qc = new QueryChain(this.client)
-    let resp = await qc.getUserPositions(mainnetConfig.BasePackage, address)
-    return resp
+  async getUserPositions(userAddress: string) {
+    try {
+      console.log(`📡 Querying user positions for ${userAddress}...`);
+      let qc = new QueryChain(this.client);
+      let response = await qc.getUserPositions(mainnetConfig.BasePackage, userAddress);
+      
+      console.log(`✅ Fetched positions:`, response);
+      return response;
+    } catch (error) {
+      console.error(`❌ Error fetching positions for ${userAddress}:`, error);
+      throw error;
+    }
   }
 
   /**
