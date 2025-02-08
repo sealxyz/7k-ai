@@ -18,13 +18,7 @@ export const getTopAprPools = tool({
       console.log('ACA')
       console.log(pools)
 
-      //@TODO: Get from the pools list the top 3 apr pools
-      const suiClient = new SuiClient()
-
-      //@TODO: pass the top 3 apr pools to the suiClient
-      const response = await suiClient.getPool(pools[0].id)
-
-      return response
+      return pools
     } catch (error) {
       console.error('Error initializing BluefinClient:', error)
     }

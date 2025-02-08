@@ -2,6 +2,7 @@ import { BluefinClient as BluefinClientV2, Networks } from '@bluefin-exchange/bl
 import { config } from 'dotenv'
 import { PoolFrequencyFetch, SPOT_API_URL } from './constants'
 import { GetExchangeInfoDto } from './dto'
+import { BluefinService } from './bluefin.service'
 
 config({
   path: '.env',
@@ -10,6 +11,7 @@ config({
 export class BluefinClient {
   private client: BluefinClientV2
   private signature: string = ''
+  private bluefinService: BluefinService
 
   constructor() {
     this.client = new BluefinClientV2(
@@ -18,6 +20,7 @@ export class BluefinClient {
       process.env.SUI_PRIVATE_SEEDPHRASE!,
       'ED25519',
     )
+    this.bluefinService = new BluefinService()
   }
 
   async init() {
@@ -104,7 +107,8 @@ export class BluefinClient {
       }
 
       const response = await fetch(`${SPOT_API_URL}/pools/info?${queryParams.toString()}`)
-      return response.json()
+      const data = await response.json()
+      return this.bluefinService.formatTopPools(data)
     } catch (error) {
       console.error(error)
       return null
