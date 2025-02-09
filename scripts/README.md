@@ -5,3 +5,9 @@
 ```bash
 npx ts-node scripts/bluefinTest.mjs
 ```
+
+### 2. Run atoma client test
+
+```bash
+npx ts-node scripts/atomaTest.mjs
+```

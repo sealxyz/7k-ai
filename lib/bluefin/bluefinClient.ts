@@ -95,7 +95,7 @@ export class BluefinClient {
    * @param token - The token to get info for
    * @returns The pools info for the given token
    */
-  async getPoolsInfo(pools?: string[], token?: string) {
+  async getPoolsInfo(pools?: string[], token?: string, limit?: number) {
     try {
       const queryParams = new URLSearchParams()
 
@@ -108,7 +108,8 @@ export class BluefinClient {
 
       const response = await fetch(`${SPOT_API_URL}/pools/info?${queryParams.toString()}`)
       const data = await response.json()
-      return this.bluefinService.formatTopPools(data, ['apr', 'tvl', 'volume'])
+
+      return this.bluefinService.formatTopPools(data, ['apr', 'tvl', 'volume'], limit)
     } catch (error) {
       console.error(error)
       return null

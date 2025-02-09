@@ -8,20 +8,23 @@ export class BluefinService {
    * @param keys - The keys to format
    * @returns The formatted pools data
    */
-  formatTopPools(data: PoolData[], keys: (keyof PoolData['day'] | 'tvl')[]) {
+  formatTopPools(data: PoolData[], keys: (keyof PoolData['day'] | 'tvl')[], limit?: number) {
     const result: Record<string, any> = {}
-    keys.forEach((key, index) => {
-      this.getTop3(data, key).forEach((pool, i) => {
+    keys.forEach((key) => {
+      this.getTop3(data, key, limit).forEach((pool, i) => {
         result[`pool${i + 1}`] = result[`pool${i + 1}`] || {
+          name: pool.poolName,
           address: pool.address,
           apr: pool.apr,
           tvl: pool.tvl,
           volume: pool.volume,
           fees: pool.fees,
           swapFees: pool.swapFees,
+          poolDetails: this.formatPoolAddress(pool.address),
         }
       })
     })
+
     return result
   }
 
@@ -31,9 +34,10 @@ export class BluefinService {
    * @param key - The key to get the top 3 pools for
    * @returns The top 3 pools for the given key
    */
-  private getTop3(data: any[], key: keyof any) {
+  private getTop3(data: any[], key: keyof any, limit = 3) {
     return data
       .map((pool) => ({
+        poolName: this.getPoolName(pool),
         address: pool.address,
         value: parseFloat(
           key === 'tvl' ? (pool.tvl as string) : (pool.day[key as keyof PoolData['day']] as string),
@@ -43,10 +47,9 @@ export class BluefinService {
         volume: parseFloat(pool.day.volume),
         fees: parseFloat(pool.day.fee),
         swapFees: parseFloat(pool.day.fee) * parseFloat(pool.feeRate) * 0.01,
-        poolDetails: this.formatPoolAddress(pool.address),
       }))
       .sort((a, b) => b.value - a.value)
-      .slice(0, 3)
+      .slice(0, limit)
   }
 
   /**
@@ -56,5 +59,9 @@ export class BluefinService {
    */
   private formatPoolAddress(poolAddress: string) {
     return `${BLEUFIN_POOL_URL_PREFIX}${poolAddress}`
+  }
+
+  private getPoolName(pool: any) {
+    return `${pool.tokenA.info.symbol} - ${pool.tokenB.info.symbol}`
   }
 }

@@ -27,9 +27,11 @@ export class AtomaClient {
       body: JSON.stringify({
         model: this.model,
         messages: [{ role: 'user', content: prompt }],
-        max_tokens: 128,
+        max_tokens: 2048,
       }),
     })
-    return response.json()
+    const data = await response.json()
+
+    return data['choices'][0]['message']['content']
   }
 }
