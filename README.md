@@ -36,4 +36,32 @@ cp .env.example .env
 
 Environment variables needed:
 
--
+---
+
+### Scripts
+
+- Description: To test exchange clients and atoma client. For further details check the [scripts/README.md](scripts/README.md) file.
+
+---
+
+### References
+
+- Atoma:
+
+  - [Official docs](ADD IT)
+
+- Bluefin:
+
+  - [Official docs](ADD IT)
+
+- Sui client:
+
+  - [Official docs](ADD IT)
+
+- Cetus:
+
+  - [Official docs](ADD IT)
+
+---
+
+## Contributors

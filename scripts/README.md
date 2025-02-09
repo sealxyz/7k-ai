@@ -11,3 +11,9 @@ npx ts-node scripts/bluefinTest.mjs
 ```bash
 npx ts-node scripts/atomaTest.mjs
 ```
+
+### 3. Run cetus client
+
+```bash
+npx ts-node scripts/cetusTest.mjs
+```
