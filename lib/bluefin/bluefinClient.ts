@@ -108,7 +108,7 @@ export class BluefinClient {
 
       const response = await fetch(`${SPOT_API_URL}/pools/info?${queryParams.toString()}`)
       const data = await response.json()
-      return this.bluefinService.formatTopPools(data)
+      return this.bluefinService.formatTopPools(data, ['apr', 'tvl', 'volume'])
     } catch (error) {
       console.error(error)
       return null
