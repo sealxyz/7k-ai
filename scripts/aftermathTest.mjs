@@ -1,8 +1,13 @@
-import dotenv from 'dotenv'
+import { Aftermath } from 'aftermath-ts-sdk'
 
-dotenv.config({ path: '.env' })
+const main = async () => {
+  const afSdk = new Aftermath('MAINNET')
+  await afSdk.init() // initialize provider
 
-const main = async () => {}
+  const pools = afSdk.Pools()
+
+  console.log(pools)
+}
 
 const args = process.argv || []
 const [_node, _fname] = args

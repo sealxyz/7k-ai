@@ -9,6 +9,7 @@ import { generateUUID, getMostRecentUserMessage, sanitizeResponseMessages } from
 import { generateTitleFromUserMessage } from '../../actions'
 import { getBluefinTopAprPools, getBluefinExchangeData } from '@/lib/ai/tools/bluefin'
 import { getCetusTopAprPools, getCetusExchangeData } from '@/lib/ai/tools/cetus'
+//import { getAftermathTopAprPools } from '@/lib/ai/tools/aftermath'
 import { AiService } from '@/lib/ai/ai.service'
 
 export const maxDuration = 60
@@ -18,10 +19,15 @@ type AllowedTools =
   | 'getBluefinTopAprPools'
   | 'getCetusExchangeData'
   | 'getCetusTopAprPools'
-
+//  | 'getAftermathTopAprPools'
 const bluefinExchangeDataTools: AllowedTools[] = ['getBluefinExchangeData', 'getBluefinTopAprPools']
 const cetusExchangeDataTools: AllowedTools[] = ['getCetusExchangeData', 'getCetusTopAprPools']
-const allTools: AllowedTools[] = [...bluefinExchangeDataTools, ...cetusExchangeDataTools]
+//const aftermathExchangeDataTools: AllowedTools[] = ['getAftermathTopAprPools']
+const allTools: AllowedTools[] = [
+  ...bluefinExchangeDataTools,
+  ...cetusExchangeDataTools,
+  // ...aftermathExchangeDataTools,
+]
 
 export async function POST(request: Request) {
   const aiService = new AiService()
@@ -75,6 +81,7 @@ export async function POST(request: Request) {
           getBluefinTopAprPools,
           getCetusExchangeData,
           getCetusTopAprPools,
+          // getAftermathTopAprPools,
         },
         onFinish: async ({ response }) => {
           if (session.user?.id) {

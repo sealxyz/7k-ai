@@ -17,3 +17,9 @@ npx ts-node scripts/atomaTest.mjs
 ```bash
 npx ts-node scripts/cetusTest.mjs
 ```
+
+### 4. Run aftermath client
+
+```bash
+npx ts-node scripts/aftermathTest.mjs
+```
