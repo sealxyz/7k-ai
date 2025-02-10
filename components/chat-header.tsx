@@ -49,13 +49,6 @@ function PureChatHeader({
         </Tooltip>
       )}
 
-      {!isReadonly && (
-        <ModelSelector
-          selectedModelId={selectedModelId}
-          className="order-1 md:order-2"
-        />
-      )}
-
       <Image
         src="/public_ui/favicon.ico"
         alt="Favicon"
