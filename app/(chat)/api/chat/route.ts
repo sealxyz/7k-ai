@@ -7,7 +7,7 @@ import { deleteChatById, getChatById, saveChat, saveMessages } from '@/db/querie
 import { generateUUID, getMostRecentUserMessage, sanitizeResponseMessages } from '@/lib/utils'
 
 import { generateTitleFromUserMessage } from '../../actions'
-import { getBluefinTopAprPools, getBluefinExchangeData } from '@/lib/ai/tools/bluefin'
+import { getBluefinTopAprPools, getBluefinExchangeData, getBluefinUserLpPositions } from '@/lib/ai/tools/bluefin'
 import { getCetusTopAprPools, getCetusExchangeData } from '@/lib/ai/tools/cetus'
 //import { getAftermathTopAprPools } from '@/lib/ai/tools/aftermath'
 import { AiService } from '@/lib/ai/ai.service'
@@ -19,8 +19,9 @@ type AllowedTools =
   | 'getBluefinTopAprPools'
   | 'getCetusExchangeData'
   | 'getCetusTopAprPools'
+  | 'getBluefinUserLpPositions'
 //  | 'getAftermathTopAprPools'
-const bluefinExchangeDataTools: AllowedTools[] = ['getBluefinExchangeData', 'getBluefinTopAprPools']
+const bluefinExchangeDataTools: AllowedTools[] = ['getBluefinExchangeData', 'getBluefinTopAprPools', 'getBluefinUserLpPositions']
 const cetusExchangeDataTools: AllowedTools[] = ['getCetusExchangeData', 'getCetusTopAprPools']
 //const aftermathExchangeDataTools: AllowedTools[] = ['getAftermathTopAprPools']
 const allTools: AllowedTools[] = [
@@ -81,6 +82,7 @@ export async function POST(request: Request) {
           getBluefinTopAprPools,
           getCetusExchangeData,
           getCetusTopAprPools,
+          getBluefinUserLpPositions,
           // getAftermathTopAprPools,
         },
         onFinish: async ({ response }) => {
