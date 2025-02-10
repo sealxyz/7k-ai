@@ -3,21 +3,26 @@ import { type Message, createDataStreamResponse, smoothStream, streamText } from
 import { auth } from '@/app/(auth)/auth'
 import { customModel } from '@/lib/ai'
 import { models } from '@/lib/ai/models'
-import { systemPrompt } from '@/lib/ai/prompts'
 import { deleteChatById, getChatById, saveChat, saveMessages } from '@/db/queries'
 import { generateUUID, getMostRecentUserMessage, sanitizeResponseMessages } from '@/lib/utils'
 
 import { generateTitleFromUserMessage } from '../../actions'
-import { getExchangeData } from '@/lib/ai/tools/bluefinExchangeData'
-import { getTopAprPools } from '@/lib/ai/tools/bluefinAprPools'
+import { getBluefinExchangeData } from '@/lib/ai/tools/bluefinExchangeData'
+import { getBluefinTopAprPools } from '@/lib/ai/tools/bluefinAprPools'
+import { getCetusExchangeData } from '@/lib/ai/tools/cetusExchangeData'
+import { AiService } from '@/lib/ai/ai.service'
+
 export const maxDuration = 60
 
-type AllowedTools = 'getExchangeData' | 'getTopAprPools'
+type AllowedTools = 'getBluefinExchangeData' | 'getBluefinTopAprPools' | 'getCetusExchangeData'
 
-const bluefinExchangeDataTools: AllowedTools[] = ['getExchangeData', 'getTopAprPools']
-const allTools: AllowedTools[] = [...bluefinExchangeDataTools]
+const bluefinExchangeDataTools: AllowedTools[] = ['getBluefinExchangeData', 'getBluefinTopAprPools']
+const cetusExchangeDataTools: AllowedTools[] = ['getCetusExchangeData']
+const allTools: AllowedTools[] = [...bluefinExchangeDataTools, ...cetusExchangeDataTools]
 
 export async function POST(request: Request) {
+  const aiService = new AiService()
+
   const { id, messages, modelId }: { id: string; messages: Array<Message>; modelId: string } =
     await request.json()
 
@@ -50,6 +55,8 @@ export async function POST(request: Request) {
     messages: [{ ...userMessage, createdAt: new Date(), chatId: id }],
   })
 
+  const systemPrompt = aiService.createSystemPrompt()
+
   return createDataStreamResponse({
     execute: (dataStream) => {
       const result = streamText({
@@ -61,11 +68,11 @@ export async function POST(request: Request) {
         experimental_transform: smoothStream({ chunking: 'word' }),
         experimental_generateMessageId: generateUUID,
         tools: {
-          getExchangeData,
-          getTopAprPools,
+          getBluefinExchangeData,
+          getBluefinTopAprPools,
+          getCetusExchangeData,
         },
         onFinish: async ({ response }) => {
-          console.log(response.messages[0].content)
           if (session.user?.id) {
             try {
               const responseMessagesWithoutIncompleteToolCalls = sanitizeResponseMessages(

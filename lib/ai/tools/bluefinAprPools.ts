@@ -3,9 +3,9 @@ import { z } from 'zod'
 import { BluefinClient } from '@/lib/bluefin'
 import { AtomaClient } from '@/lib/atoma'
 
-export const getTopAprPools = tool({
+export const getBluefinTopAprPools = tool({
   description:
-    'Get the top 3 apr pools in Bluefin Exchange. Only use it when the word pools or apr is mentioned.',
+    'Get the top 3 apr pools in Bluefin Exchange. Only use it when the word pools or apr is mentioned in the Bluefin Exchange context.',
   parameters: z.object({
     limit: z.number().optional().default(3).describe('The number of pools to return'),
     poolsAddresses: z
