@@ -38,6 +38,12 @@ function PureSuggestedActions({ chatId, append }: SuggestedActionsProps) {
   ];
 
   return (
+    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div className="w-full text-center bg-background text-foreground py-6 mb-4 rounded-md">
+      <h1 className="text-2xl font-bold">
+        Welcome Anon to 7K-AI Sui Typhoon Chatbot!
+      </h1>
+    </div>
     <div className="grid sm:grid-cols-2 gap-2 w-full">
       {suggestedActions.map((suggestedAction, index) => (
         <motion.div
@@ -67,6 +73,7 @@ function PureSuggestedActions({ chatId, append }: SuggestedActionsProps) {
           </Button>
         </motion.div>
       ))}
+    </div>
     </div>
   );
 }
