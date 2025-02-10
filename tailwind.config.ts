@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import defaultTheme from 'tailwindcss/defaultTheme'
 
 const config: Config = {
   darkMode: ['class'],
@@ -9,8 +10,10 @@ const config: Config = {
   ],
   theme: {
     fontFamily: {
-      sans: ['geist'],
-      mono: ['geist-mono'],
+      outfit: ["Outfit", ...defaultTheme.fontFamily.sans],
+      cyberwayRiders: ["CyberwayRiders", ...defaultTheme.fontFamily.sans],
+      samsung: ["SamsungSharpSans", ...defaultTheme.fontFamily.sans],
+      hyWenHei: ["HYWenHei", ...defaultTheme.fontFamily.sans],
     },
     extend: {
       borderRadius: {
@@ -19,10 +22,10 @@ const config: Config = {
         sm: 'calc(var(--radius) - 4px)',
       },
       colors: {
-        background: 'hsl(var(--background))',
+        background: '#12151D',
         foreground: 'hsl(var(--foreground))',
         card: {
-          DEFAULT: 'hsl(var(--card))',
+          DEFAULT: '#181A25',
           foreground: 'hsl(var(--card-foreground))',
         },
         popover: {
@@ -60,7 +63,7 @@ const config: Config = {
           '5': 'hsl(var(--chart-5))',
         },
         sidebar: {
-          DEFAULT: 'hsl(var(--sidebar-background))',
+          DEFAULT: '#181A25',
           foreground: 'hsl(var(--sidebar-foreground))',
           primary: 'hsl(var(--sidebar-primary))',
           'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',

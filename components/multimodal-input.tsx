@@ -29,6 +29,7 @@ import { Button } from './ui/button';
 import { Textarea } from './ui/textarea';
 import { SuggestedActions } from './suggested-actions';
 import equal from 'fast-deep-equal';
+import { color } from 'framer-motion';
 
 function PureMultimodalInput({
   chatId,
@@ -231,6 +232,9 @@ function PureMultimodalInput({
       )}
 
       <Textarea
+        style={{
+          backgroundColor: '#181A25',
+        }}
         ref={textareaRef}
         placeholder="Send a message..."
         value={input}
@@ -254,9 +258,6 @@ function PureMultimodalInput({
         }}
       />
 
-      <div className="absolute bottom-0 p-2 w-fit flex flex-row justify-start">
-        <AttachmentsButton fileInputRef={fileInputRef} isLoading={isLoading} />
-      </div>
 
       <div className="absolute bottom-0 right-0 p-2 w-fit flex flex-row justify-end">
         {isLoading ? (
@@ -348,6 +349,9 @@ function PureSendButton({
         submitForm();
       }}
       disabled={input.length === 0 || uploadQueue.length > 0}
+      style={{
+        backgroundColor: '#5A5DE4',
+      }}
     >
       <ArrowUpIcon size={14} />
     </Button>

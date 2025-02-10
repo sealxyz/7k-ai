@@ -16,24 +16,24 @@ interface SuggestedActionsProps {
 function PureSuggestedActions({ chatId, append }: SuggestedActionsProps) {
   const suggestedActions = [
     {
-      title: 'What are the advantages',
-      label: 'of using Next.js?',
-      action: 'What are the advantages of using Next.js?',
+      title: 'Sui Blockchain',
+      label: 'What is the Sui Blockchain?',
+      action: 'What is the Sui Blockchain?',
     },
     {
-      title: 'Write code to',
-      label: `demonstrate djikstra's algorithm`,
-      action: `Write code to demonstrate djikstra's algorithm`,
+      title: 'Bluefin Exchange',
+      label: `What is Bluefin Exchange?`,
+      action: `What is Bluefin Exchange?`,
     },
     {
-      title: 'Help me write an essay',
-      label: `about silicon valley`,
-      action: `Help me write an essay about silicon valley`,
+      title: 'Cetus exchange',
+      label: `What is Cetus exchange?`,
+      action: `What is Cetus exchange?`,
     },
     {
-      title: 'What is the weather',
-      label: 'in San Francisco?',
-      action: 'What is the weather in San Francisco?',
+      title: 'Move smart contracts language',
+      label: 'What is Move smart contracts language?',
+      action: 'What is Move smart contracts language?',
     },
   ];
 

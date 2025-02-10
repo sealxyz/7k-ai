@@ -45,6 +45,8 @@ export default async function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        <title>7k AI Chatbot</title>
+        <link rel="icon" href="/public/favicon.ico" /> 
         <script
           dangerouslySetInnerHTML={{
             __html: THEME_COLOR_SCRIPT,

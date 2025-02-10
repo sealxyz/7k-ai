@@ -19,7 +19,6 @@ export function Chat({
   id,
   initialMessages,
   selectedModelId,
-  selectedVisibilityType,
   isReadonly,
 }: {
   id: string
