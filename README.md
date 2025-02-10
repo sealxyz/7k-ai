@@ -4,7 +4,32 @@
 
 ## Description
 
-This is a chatbot that uses AI to answer questions about the Sui blockchain and its ecosystem. 
+An automated agent that helps UniV3 LPs monitor and optimize their positions on SUI blockchain through real-time tracking, alerts, and recommendations.
+
+**The Problem**
+
+Concentrated liquidity AMMs advertise high **APR returns**, but in reality, **LPs suffer losses** from **impermanent loss, poor liquidity range selection, and trading fees**. Manual LP management is inefficient, leaving users exposed to suboptimal returns.
+
+**Our Competitive Edge**
+
+Backed by **proprietary research on optimal LP strategies**, **7K LP Agent** applies **AI-driven liquidity optimization models** to dynamically adjust LP positions, **minimizing risks** and **maximizing yield** better than rule-based or naive strategies.
+
+Paper: https://u4xtuh1hoqs.sg.larksuite.com/file/FIJFbokCoogxctxObe7lr5TAgAh?from=from_copylink
+
+**How It Works**
+        •        **AI-Optimized LP Positioning** – Predicts **profitable liquidity ranges**, reducing impermanent loss.
+        •        **Automated Reallocation** – Dynamically shifts funds **based on market conditions** for maximum efficiency.
+        •        **Smart Fee Capture** – Optimizes **trading fee earnings** while adjusting for volume changes.
+        •        **Real-Time Market Intelligence** – Aggregates **on-chain and social data** to anticipate market trends.
+
+**The Vision: AI-Powered Passive Income**
+
+**7K LP Agent** is more than an LP optimizer—it’s a **stepping stone to AI-driven wealth management**. As intelligence scales, it will evolve into a fully **autonomous DeFi asset manager**, seamlessly reallocating capital for **optimal long-term yield**.
+
+**7K LP Agent: Turning Liquidity into Smart Capital**
+
+With DeFi complexity growing, **human LPs can’t keep up**. **7K LP Agent** ensures **effortless, optimized liquidity management**, bringing the future of **AI-native passive income** to DeFi. 🚀
+
 
 Built with: 
 
