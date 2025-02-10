@@ -1,4 +1,3 @@
-import { BluefinClient as BluefinClientV2, Networks } from '@bluefin-exchange/bluefin-v2-client'
 import { config } from 'dotenv'
 import { PoolFrequencyFetch, SPOT_API_URL } from './constants'
 import { GetExchangeInfoDto } from './dto'
@@ -9,30 +8,22 @@ config({
 })
 
 export class BluefinClient {
-  private client: BluefinClientV2
-  private signature: string = ''
   private bluefinService: BluefinService
 
   constructor() {
-    this.client = new BluefinClientV2(
-      true,
-      process.env.SUI_NETWORK === 'MAINNET' ? Networks.PRODUCTION_SUI : Networks.TESTNET_SUI,
-      process.env.SUI_PRIVATE_SEEDPHRASE!,
-      'ED25519',
-    )
     this.bluefinService = new BluefinService()
   }
 
-  async init() {
-    await this.client.init()
-    this.signature = await this.client.createOnboardingSignature({
-      useDeprecatedSigningMethod: true,
-    })
-  }
+  // async init() {
+  //   await this.client.init()
+  //   this.signature = await this.client.createOnboardingSignature({
+  //     useDeprecatedSigningMethod: true,
+  //   })
+  // }
 
-  async getPublicAddress() {
-    return this.client.getPublicAddress()
-  }
+  // async getPublicAddress() {
+  //   return this.client.getPublicAddress()
+  // }
 
   ///////////////////////////////////////////////////// TRADE API /////////////////////////////////////////////////////
 
@@ -41,27 +32,27 @@ export class BluefinClient {
    * @param symbol - The symbol of the market to get data for
    * @returns The market data for the given symbol
    */
-  async getTradeMarketData(symbol?: string) {
-    const response = await this.client.getMarketData(symbol)
-    return response.data
-  }
+  // async getTradeMarketData(symbol?: string) {
+  //   const response = await this.client.getMarketData(symbol)
+  //   return response.data
+  // }
 
   /**
    * Get master info for a given symbol
    * @param symbol - The symbol of the market to get info for
    * @returns The master info for the given symbol
    */
-  async getTradeMasterInfo(symbol?: string) {
-    const response = await this.client.getMasterInfo(symbol)
-    return response.data
-  }
+  // async getTradeMasterInfo(symbol?: string) {
+  //   const response = await this.client.getMasterInfo(symbol)
+  //   return response.data
+  // }
 
-  async getTradeClientInfo() {
-    const response = await this.client.getUserPosition({
-      parentAddress: this.client.getPublicAddress(),
-    })
-    return response.data
-  }
+  //   async getTradeClientInfo() {
+  //     const response = await this.client.getUserPosition({
+  //       parentAddress: this.client.getPublicAddress(),
+  //     })
+  //     return response.data
+  //   }
 
   ///////////////////////////////////////////////////// SPOT API /////////////////////////////////////////////////////
 
@@ -70,10 +61,10 @@ export class BluefinClient {
    * @param symbol - The symbol of the market to get info for
    * @returns The exchange info for the given symbol
    */
-  async getMarketExchangeInfo(): Promise<any> {
-    const response = await this.client.getExchangeInfo()
-    return response.data
-  }
+  // async getMarketExchangeInfo(): Promise<any> {
+  //   const response = await this.client.getExchangeInfo()
+  //   return response.data
+  // }
 
   /**
    * Get exchange info
