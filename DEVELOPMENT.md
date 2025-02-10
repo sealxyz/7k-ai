@@ -1,34 +1,32 @@
-# Create new tool
+# Create tool
 
-* Description: Steps to create and a new tool to the chatbot.
+- Guide to add a new tool to the ai agent.
 
-### 1. Lib/ai/tools
+### 1. Create a new folder inside Lib/ai/tools
 
-1. bluefinUserPositions.ts
+For instance, let´s break down the bluefin tool:
 
-dentro de la funcion execute se ejecuta el codigo asyncronico de la tool.
+1. [bluefinExhangeData](./lib/ai/tools/bluefin/bluefinExchangeData.ts)
 
-2.
+- Inside this folder, create a new file with the name of the tool.
+- Add tool
+  - Description
+  - Parameters: Use zod to define the parameters.
+  - Code: Inside the execute function, add the code to execute the tool.
 
-Opcion 1: Llamadas a rpc client de sui mediante el suiClient o bluefCLient (clase propia, no de la libreria)
+### 2. Tool configuration
 
-Opcion 2: Trabajar con un archivo de texto y parsearlo.
+- [app/(chat)/api/chat/route.ts](<./app/(chat)/api/chat/route.ts>)
 
-Esto funcion igual QUE UN CONTROLLER.
+a. Import the tool
 
-3. Donde se configura la tool
-
-/app/(chat)/api/chat/route.ts
-
-a. Importar la tool
-
-```
+```typescript
 import { getBluefinTopAprPools, getBluefinExchangeData } from '@/lib/ai/tools/bluefin'
 ```
 
-b. Agregar la tool al array de tools
+b. Add the tool to the array of tools
 
-```
+```typescript
 type AllowedTools =
   | 'getBluefinExchangeData'
   | 'getBluefinTopAprPools'
@@ -37,15 +35,15 @@ type AllowedTools =
 //  | 'getAftermathTopAprPools'
 ```
 
-c. Agregar la tool al array de bluefin tools
+c. Add the tool to the array of bluefin tools
 
-```
+```typescript
 const bluefinExchangeDataTools: AllowedTools[] = ['getBluefinExchangeData', 'getBluefinTopAprPools']
 ```
 
-d. Agregar la tool dentro del agente
+d. Add the tool inside the agent
 
-```
+```typescript
         tools: {
           getBluefinExchangeData,
           getBluefinTopAprPools,
