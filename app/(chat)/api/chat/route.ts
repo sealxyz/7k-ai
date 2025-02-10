@@ -5,9 +5,8 @@ import { customModel } from '@/lib/ai'
 import { models } from '@/lib/ai/models'
 import { deleteChatById, getChatById, saveChat, saveMessages } from '@/db/queries'
 import { generateUUID, getMostRecentUserMessage, sanitizeResponseMessages } from '@/lib/utils'
-
 import { generateTitleFromUserMessage } from '../../actions'
-import { getBluefinTopAprPools, getBluefinExchangeData } from '@/lib/ai/tools/bluefin'
+import { getBluefinTopAprPools, getBluefinExchangeData, getBluefinUserLpPositions } from '@/lib/ai/tools/bluefin'
 import { getCetusTopAprPools, getCetusExchangeData } from '@/lib/ai/tools/cetus'
 //import { getAftermathTopAprPools } from '@/lib/ai/tools/aftermath'
 import { AiService } from '@/lib/ai/ai.service'
@@ -17,10 +16,11 @@ export const maxDuration = 60
 type AllowedTools =
   | 'getBluefinExchangeData'
   | 'getBluefinTopAprPools'
+  | 'getBluefinUserLpPositions'
   | 'getCetusExchangeData'
   | 'getCetusTopAprPools'
 //  | 'getAftermathTopAprPools'
-const bluefinExchangeDataTools: AllowedTools[] = ['getBluefinExchangeData', 'getBluefinTopAprPools']
+const bluefinExchangeDataTools: AllowedTools[] = ['getBluefinExchangeData', 'getBluefinTopAprPools', 'getBluefinUserLpPositions']
 const cetusExchangeDataTools: AllowedTools[] = ['getCetusExchangeData', 'getCetusTopAprPools']
 //const aftermathExchangeDataTools: AllowedTools[] = ['getAftermathTopAprPools']
 const allTools: AllowedTools[] = [
@@ -79,13 +79,12 @@ export async function POST(request: Request) {
         tools: {
           getBluefinExchangeData,
           getBluefinTopAprPools,
+          getBluefinUserLpPositions,
           getCetusExchangeData,
           getCetusTopAprPools,
           // getAftermathTopAprPools,
         },
         onFinish: async ({ response }) => {
-          console.log('ENTRO ACA EN EL ONFINISH')
-          console.log(response.messages[0].content)
           if (session.user?.id) {
             try {
               const responseMessagesWithoutIncompleteToolCalls = sanitizeResponseMessages(
