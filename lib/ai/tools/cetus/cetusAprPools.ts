@@ -21,14 +21,15 @@ export const getCetusTopAprPools = tool({
       const atomaClient = new AtomaClient()
       const pools = await cetusClient.getPoolsInfo(limit)
 
-      const prompt = `
-      The following is a list of pools with their apr and tvl:
-      ${JSON.stringify(pools)}
+      // const prompt = `
+      // The following is a list of pools with their apr and tvl:
+      // ${JSON.stringify(pools)}
 
-      Please format the output to be human readable and make it pretty.
-      `
+      // Please format the output to be human readable and make it pretty.
+      // `
 
-      return await atomaClient.getChatCompletition(prompt)
+      // return await atomaClient.getChatCompletition(prompt)
+      return pools
     } catch (error) {
       console.error('Error fetching Cetus pools:', error)
     }
