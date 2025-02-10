@@ -1,5 +1,5 @@
 import { config } from 'dotenv'
-import { ATOMA_API_URL } from './constants'
+import { ATOMA_API_URL, ATOMA_MODELS } from './constants'
 
 config({
   path: '.env',
@@ -7,9 +7,14 @@ config({
 
 export class AtomaClient {
   private apiKey: string
+  private model: ATOMA_MODELS = ATOMA_MODELS.LLAMA
 
   constructor() {
     this.apiKey = process.env.ATOMA_API_KEY!
+  }
+
+  async updateModel(model: ATOMA_MODELS) {
+    this.model = model
   }
 
   async getChatCompletition(prompt: string) {
@@ -19,7 +24,14 @@ export class AtomaClient {
         Authorization: `Bearer ${this.apiKey}`,
         'Content-Type': 'application/json',
       },
+      body: JSON.stringify({
+        model: this.model,
+        messages: [{ role: 'user', content: prompt }],
+        max_tokens: 2048,
+      }),
     })
-    return response.json()
+    const data = await response.json()
+
+    return data['choices'][0]['message']['content']
   }
 }

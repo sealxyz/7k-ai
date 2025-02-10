@@ -3,34 +3,35 @@ import { type Message, createDataStreamResponse, smoothStream, streamText } from
 import { auth } from '@/app/(auth)/auth'
 import { customModel } from '@/lib/ai'
 import { models } from '@/lib/ai/models'
-import { systemPrompt } from '@/lib/ai/prompts'
 import { deleteChatById, getChatById, saveChat, saveMessages } from '@/db/queries'
 import { generateUUID, getMostRecentUserMessage, sanitizeResponseMessages } from '@/lib/utils'
 
 import { generateTitleFromUserMessage } from '../../actions'
-import { createDocument } from '@/lib/ai/tools/create-document'
-import { updateDocument } from '@/lib/ai/tools/update-document'
-import { requestSuggestions } from '@/lib/ai/tools/request-suggestions'
-import { getWeather } from '@/lib/ai/tools/get-weather'
-import { getExchangeData } from '@/lib/ai/tools/bluefinExchangeData'
-import { getTopAprPools } from '@/lib/ai/tools/bluefinAprPools'
+import { getBluefinTopAprPools, getBluefinExchangeData } from '@/lib/ai/tools/bluefin'
+import { getCetusTopAprPools, getCetusExchangeData } from '@/lib/ai/tools/cetus'
+//import { getAftermathTopAprPools } from '@/lib/ai/tools/aftermath'
+import { AiService } from '@/lib/ai/ai.service'
+
 export const maxDuration = 60
 
 type AllowedTools =
-  | 'createDocument'
-  | 'updateDocument'
-  | 'requestSuggestions'
-  | 'getWeather'
-  | 'getExchangeData'
-  | 'getTopAprPools'
-
-const blocksTools: AllowedTools[] = ['createDocument', 'updateDocument', 'requestSuggestions']
-
-const weatherTools: AllowedTools[] = ['getWeather']
-const bluefinExchangeDataTools: AllowedTools[] = ['getExchangeData', 'getTopAprPools']
-const allTools: AllowedTools[] = [...blocksTools, ...weatherTools, ...bluefinExchangeDataTools]
+  | 'getBluefinExchangeData'
+  | 'getBluefinTopAprPools'
+  | 'getCetusExchangeData'
+  | 'getCetusTopAprPools'
+//  | 'getAftermathTopAprPools'
+const bluefinExchangeDataTools: AllowedTools[] = ['getBluefinExchangeData', 'getBluefinTopAprPools']
+const cetusExchangeDataTools: AllowedTools[] = ['getCetusExchangeData', 'getCetusTopAprPools']
+//const aftermathExchangeDataTools: AllowedTools[] = ['getAftermathTopAprPools']
+const allTools: AllowedTools[] = [
+  ...bluefinExchangeDataTools,
+  ...cetusExchangeDataTools,
+  // ...aftermathExchangeDataTools,
+]
 
 export async function POST(request: Request) {
+  const aiService = new AiService()
+
   const { id, messages, modelId }: { id: string; messages: Array<Message>; modelId: string } =
     await request.json()
 
@@ -63,6 +64,8 @@ export async function POST(request: Request) {
     messages: [{ ...userMessage, createdAt: new Date(), chatId: id }],
   })
 
+  const systemPrompt = aiService.createSystemPrompt()
+
   return createDataStreamResponse({
     execute: (dataStream) => {
       const result = streamText({
@@ -74,16 +77,11 @@ export async function POST(request: Request) {
         experimental_transform: smoothStream({ chunking: 'word' }),
         experimental_generateMessageId: generateUUID,
         tools: {
-          getWeather,
-          createDocument: createDocument({ session, dataStream, model }),
-          updateDocument: updateDocument({ session, dataStream, model }),
-          requestSuggestions: requestSuggestions({
-            session,
-            dataStream,
-            model,
-          }),
-          getExchangeData,
-          getTopAprPools,
+          getBluefinExchangeData,
+          getBluefinTopAprPools,
+          getCetusExchangeData,
+          getCetusTopAprPools,
+          // getAftermathTopAprPools,
         },
         onFinish: async ({ response }) => {
           console.log('ENTRO ACA EN EL ONFINISH')

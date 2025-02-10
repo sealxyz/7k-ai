@@ -1,0 +1,605 @@
+{
+  list: [
+    {
+      is_forward: true,
+      swap_account: '0xffe446505ed4493bd04ae8ac255f50cf007ad05ac14f4028adac3ba5fc1fb5ad',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x0bbae2f6340dbabee62ba938e30f779f2f3746d691112aa16e6c548015c2e2f9',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xcce3d6e275f5c121b00493d71797b531a513b9957101e538aeda1eb30667f10d',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x514ceb12a6685e887df64e8a7b17e8e3c16e6d85678b7355e63e8e8b27003110',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x674d58c11de8a4ce56a404e061df555e0bae129df8cd8179515f62637e855afc',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x68b5265d9a3a68a021815adc4a0f20752df3f27c0185da71ded0e036d3751354',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x2fdf4bba612dfc620827c8a88c4cc37cf0ed2dd673124098b10be2fb476d4815',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x9b8947fb87b4cb3c082edc047dcf7a89178ce366db5c8b3124d2d506bdc25c4c',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xd3e575875d2197839b061a6f192454af7d5ef0872b8cb8b460f4fe9247ddf27d',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x5f0feadec405334f7a5d7e3e2fca3a336a2ad2a7a65d7c3ddfc5b00fc72776b5',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xd2ce422598e73b5ae14ce536f582fb995d881e358f61c064b20a15208c0b5b2e',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x8e6404028f265f2062746fadc219940a6e74dfe9c45df3a78bdb5a191a5b4538',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x4d4498f433904ad0ceddb0d7f84e4fe3edce72578645917fbf75f696eeaeafb7',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x692a6acc8f29a2e0122c2089aa1d0a6bba503326ada782d5fb936e951814a11a',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xbad9243751af25af8e3710df8cd48078addd3769199237af9766f9342afab5fd',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x0a3316c728de22b9c03d2b9bd095f1da7eae8f482f4e632538f5c5e1b0286edd',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x81b71d09f20c6da0437a1518fb49fff3d0ab0b725d67c6eb0af1f10f98bf9a1d',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xdcd4ab098b83f8303382946e3166a55143873b65a3cc5b64fd02f1217c0b9b0c',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x0b7b27ce0b1210fbe322364adbd032aa3fab4d2c3f773ef6dbcb8fb9dc74876e',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x79537c3a5c7473ac06048e9110cfced80dcce7eff24a669ff8fcf7180bd2dfc8',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xce4a864d0696b151694bd225c1ea9158186cb9f7c77ccec1ce591ffa97550ce6',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xfed6630e63871a505f869214079efbd6b7f6829828a03d319f9ff146b5fd70a6',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x86509d355c291dbdec40034df678fa51b78c529efc899a293667b8a0e82eb86f',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x88d67691bd838bee8921de6af0eb4536b8d060ebe2dde444cd42ff581645a25b',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x21dfb56714a0accfb3af2db5a129a6a62bcef6b0f0ecdf16b17b44824bcebcf3',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x9cc31b8516c639c41b673bc0e6210226c5b4719e88394e7704c5763765bc1f85',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xfb7c7891e84d590fcda3cb3cbea6bed1c9e95b7e7f310ba4a5e59eb2ec5428ea',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x956b33bc3fcafdfebf7b4311f558613367f2adcc547a90460c0e5924a8bb414c',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x138075a1f899d1b13d4b199ed96756c68d449fc1139f46ed7d2101c67acad2c2',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x546011cfca3a1b5a01b970273446a9b62b9ff5445bc5a51e8c03c7373f422996',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x552aef52f73a6a082910da98b87cf9d4b0df1d0dc38f89f329705003b6019e75',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x0d9bdeab2d2b75b42b4ed1c0f796c8d4db0f8a3b42142517da261982f553149e',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x63c67f4458d1618ebd2f1e53f65c5987d74819643e9204c83f8cc69ead5541a3',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xa1a460d1ffc6eba757200f19449636829dcb6a8ef5139dc6b1b1bd1e22371269',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x4b353478cc6a6eb5f1c120458bcc3b8670fa317e54a76563ba5886b2430c70a6',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xe22c8fa9e25cd32bb08f0b3326579d75a2bfadad2173227a2ae778ccf01bee4d',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x7832334670f212d180fff4f9f973a549d28739d344f4fe58bb5617f71ddf4073',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xc42d28823595888075113b91be5ffa2364f5a6def1b18358bc1caa101f3001bc',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xf2b80db1bdb69db642c62687ad700c24a85c620c8fa251aa0810f53663c87fbc',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xaf4b4d47757093790fe1eb78bbe37343402607229a7954d3574888fa79773b6c',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xdba4f3dab7905fde6cd2873c002a624c5c1ca09e7f4ff10b6227b9640d63d5e5',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x43bd25eab2bc4ab54b0d7d3ea926e7de79b0077be6b37508229518c9cf2c8efd',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x176a63653853728de4383f5e4430716d67552a537298fe5d64fc41cdfd3c1008',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xe12df4ab0b93c6eb6421feec6bfd8903bfe994df561713369540e7a2368e878a',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x788ea695f2a6fb817c5dd2043e5ef5b27eb6c1ee66d4f4e2ba481a09cfa68be0',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xc9b3f8c92cc9a6d8bf2512a2de833d44f90e30dbb884b0aad2a6c775628d0c17',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xc3b284f9d24df33eb0611755df175d57b55fe9781867b44a7f2e242b162da4c0',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xa76d60fb8340534b93bb077c3bfb2a25cf1da1aa7d73bff90655e7eb14d37e07',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xe3a6f43c7f1509fba28d3a1878d2b43fa3aadb3743173ab85788a1071cf8210c',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xa0097f3abb568dc870953797bfdaeea58dc478515b99d4d4fe5f424415271d29',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x34c0d724ad5f9c21d497717cf2e42ca4fb3241c3f74b7565ff9aaac35a16683c',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x617d7fadb4f359ee5ea9cedd409697900b56478c8eed69e1329db7b9a389b460',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xa51c328fcf3df8afeb85afb88013b800071525ce0df8aaabd0b4e28e6912402f',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x48017b568ca47964d001f25a18de1e3fb0f86252a9758251e90febff106067f5',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xfd4e7d340bde56623ff26b07c8df3e8985fd7d0ef89307b5ea122441db428fa7',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xf119070379871143c898f476b8ed4b479394c70c508b8a5ea15a880249f00ae8',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xb78aed68df960c251d628f9d70e8899f400468724f7af5f4853dd0966f2d4c26',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xef4eb988fa81b974cf9898dd90ac648c2f13e8ac052b1c2d00ab4722f451ed8b',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x4e812c17b9cd828af7f8ea16f9d3d787458931bbfc3c0b1c8cd3ae3237ad1c83',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xd453c6907ea226ac2d13f72423916e3700a1e56c250c0c95f7b2f8ef31ee15cf',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x966ef1a11a53a69ec1fde05057129fb90c330eb2f9e313c50fc42ae8c9bcca2c',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xb7aa695f80fbb158b6fa1ab264b757bbc1f831b00874799060f95626f7244db9',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: false,
+      swap_account: '0xc24f6c7be8dbe62fd2f8322b3bd9dbe2738761dec4ca38fdbb09b84052a1227f',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xc4f34d64fe0fe6f82d5bad17c551741527c4f12fb6f0f3e978ca6e6fe1201593',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xd2c5b42ad13a1c9fa8fde9e671b3a34c3bb3c638e964c3c3195012b586442c41',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xa56b5e8052e16de94f537c72a540c63e5e2395f1c4ca09126afde0a77bd76c16',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xaf8e345dd9d560037ff7d3c0298e714b7653459b890624c055592ce04c4b24c1',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xc9722a398f1320d253cc7e8631c65fa407e0cad22678b70cea2ff9934fef5450',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x0c5b371e826daab951b0eaeef035d927132c52ae798212db5e291d1e95d84640',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x3e4fa6cf8f393d5ea2b45702f1d7fb11726cb62ee13c1222f0c236f9a07a8b2a',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x2f77c7c8f6c069b472b20a072735c90a8460cb9181a8297e78db5e8728818c28',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xea69d7a40f33ac343d4d4ac92ed636529286ad9f5e48c085007319026898ccaf',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xec174e4b904e1d5d47df2186a8342e5e271e64df55853318bec347ef0271c679',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x6676c7160302eaaab0d1cbb490cab196c2c2aa667e68ddb5afda5e13cb9442bd',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x09f7d5e91258224b96868f77aedf9276e0881fe684c086a883b0d8f1d4fc48bc',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xfde21f5186f46a05de159161a920b29c293e958921de3baca64f2b7fd600f6eb',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x7dd1a824839a70c17b98c713ce0b0014ae5042214050fe65297144881e3217ce',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x493beff5550f83a1b4efad9f5d9caeeb25100c7d5c1452a633e0de7c5bd45c83',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xbecbc9b58a271f03a9a99aef14be0b855d185b54f3e92fe1da10d34679a69b44',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x51af2a80cdcff1f31cff41f737fd357b2c6d5ee7201c7e8ddfc7c4c5f7562316',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xd97b54b7c7a5eb3d4de6fa75667c35fecea08d516b1e98a755d4dbc24374421d',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x86395ac4928c26fe118cc9037c3d881e8ebfba6112752fe669102d8ea48a0d1f',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x0698c028e726688542f146d301a5ae69242ce9e532903e59fec22179b5a1dcb2',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x7034d87184238fb06f0a54a690d018923b2ee39ee5cdddf93840d3a75e6128a4',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: false,
+      swap_account: '0xa5b86444d8f1a56d90870a0ebac7814f0c81bba58a3d59e55ecb2b89a3e9696c',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xe82a24a8bedc6debf7fedb58591c0c511a3a6d2ae082920c66d98e102c84c480',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x100bf52b2fd5a07a0c998e8ea8a1326b877049a94d99c0196aa39881e9929962',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xd23334693f5000cdbacafb265aa6d05885ffab80eb46988e7d4c731497a786f4',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xced9837341ec0a1c187dc19302c1db025a4532b382a2dfdb32f4cbb479a62f26',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xdadabfe98c1c82880a883d36b928aa892b5f01f50d108a670af48a498e7b33b6',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xf66903af743ced003189eb52a21fa46cd11ca90cdb69c4fb7a023701231e89f5',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xc9b78c501515a311bda92d5a24f27fa6103d487094da8b54cc679a9fc2a9d126',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x88dff9588e60fcb6770c8ce15e6ac888f60a1c4b6206a3933d0ec3b96bdf3f8e',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xc64ea55f66e3830161586f1fa470b603f4cddd05034ced96c54d6bb4399e6f46',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xc049964f1b7d412814aff947d6da1941c387ef321a033bde4f204ba00c4470aa',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x8cfc2a97e89059b2ab82bf6d64db8d1d0c6d5dd7290c46a89d271a1ab5e6eb82',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x2e0a1de4b28f3185c3dc27fe15f41c4514bcb556ac5d5c70df3f02c371535084',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: false,
+      swap_account: '0x43b913e68f454dafee996a4f9b20d40da9f26a45add2f02d29317bd7c901fae7',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0xa3da45b13a26d728fc67228b26d50499fc4f9c045c8e4a77d0f05430807974ce',
+      data: [Array],
+      ticks: [Object]
+    },
+    {
+      is_forward: true,
+      swap_account: '0x2a0a0624d9988e19b3f082e16b8219cd680899847c6368be2930b879cacd37fd',
+      data: [Array],
+      ticks: [Object]
+    },
+    ... 22431 more items
+  ]
+}

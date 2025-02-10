@@ -1,6 +1,8 @@
 import { BluefinClient as BluefinClientV2, Networks } from '@bluefin-exchange/bluefin-v2-client'
 import { config } from 'dotenv'
 import { PoolFrequencyFetch, SPOT_API_URL } from './constants'
+import { GetExchangeInfoDto } from './dto'
+import { BluefinService } from './bluefin.service'
 
 config({
   path: '.env',
@@ -9,6 +11,7 @@ config({
 export class BluefinClient {
   private client: BluefinClientV2
   private signature: string = ''
+  private bluefinService: BluefinService
 
   constructor() {
     this.client = new BluefinClientV2(
@@ -17,6 +20,7 @@ export class BluefinClient {
       process.env.SUI_PRIVATE_SEEDPHRASE!,
       'ED25519',
     )
+    this.bluefinService = new BluefinService()
   }
 
   async init() {
@@ -75,14 +79,13 @@ export class BluefinClient {
    * Get exchange info
    * @returns The exchange info
    */
-  async getExchangeInfo(): Promise<any> {
+  async getExchangeInfo(): Promise<GetExchangeInfoDto> {
     try {
       const response = await fetch(`${SPOT_API_URL}/info`)
-      console.log(response)
-      return response.json()
+      const data = await response.json()
+      return data
     } catch (error) {
-      console.error(error)
-      return null
+      throw new Error('Error getting exchange info', { cause: error })
     }
   }
 
@@ -92,7 +95,7 @@ export class BluefinClient {
    * @param token - The token to get info for
    * @returns The pools info for the given token
    */
-  async getPoolsInfo(pools?: string[], token?: string) {
+  async getPoolsInfo(pools?: string[], token?: string, limit?: number) {
     try {
       const queryParams = new URLSearchParams()
 
@@ -104,7 +107,9 @@ export class BluefinClient {
       }
 
       const response = await fetch(`${SPOT_API_URL}/pools/info?${queryParams.toString()}`)
-      return response.json()
+      const data = await response.json()
+
+      return this.bluefinService.formatTopPools(data, ['apr', 'tvl', 'volume'], limit)
     } catch (error) {
       console.error(error)
       return null
