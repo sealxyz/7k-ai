@@ -84,8 +84,6 @@ export async function POST(request: Request) {
           // getAftermathTopAprPools,
         },
         onFinish: async ({ response }) => {
-          console.log('ENTRO ACA EN EL ONFINISH')
-          console.log(response.messages[0].content)
           if (session.user?.id) {
             try {
               const responseMessagesWithoutIncompleteToolCalls = sanitizeResponseMessages(

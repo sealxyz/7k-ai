@@ -4,7 +4,7 @@ import { z } from 'zod'
 
 export const getBluefinExchangeData = tool({
   description:
-    'Get the current informational exchange data for Bluefin Exchange. Please transform the json object that will have the following format in a text format: {totalFee: string, totalVolume: string, tvl: string}',
+    'Get the current informational exchange data for Bluefin Exchange. Please transform the json object that will have the following format in a text format: {totalFee: string, totalVolume: string, tvl: string}. DO NOT SHOW THE JSON OBJECT TO THE USER, JUST THE FORMATTED TEXT.',
   parameters: z.object({}),
 
   execute: async () => {
