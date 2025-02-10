@@ -7,17 +7,20 @@ import { deleteChatById, getChatById, saveChat, saveMessages } from '@/db/querie
 import { generateUUID, getMostRecentUserMessage, sanitizeResponseMessages } from '@/lib/utils'
 
 import { generateTitleFromUserMessage } from '../../actions'
-import { getBluefinExchangeData } from '@/lib/ai/tools/bluefinExchangeData'
-import { getBluefinTopAprPools } from '@/lib/ai/tools/bluefinAprPools'
-import { getCetusExchangeData } from '@/lib/ai/tools/cetusExchangeData'
+import { getBluefinTopAprPools, getBluefinExchangeData } from '@/lib/ai/tools/bluefin'
+import { getCetusTopAprPools, getCetusExchangeData } from '@/lib/ai/tools/cetus'
 import { AiService } from '@/lib/ai/ai.service'
 
 export const maxDuration = 60
 
-type AllowedTools = 'getBluefinExchangeData' | 'getBluefinTopAprPools' | 'getCetusExchangeData'
+type AllowedTools =
+  | 'getBluefinExchangeData'
+  | 'getBluefinTopAprPools'
+  | 'getCetusExchangeData'
+  | 'getCetusTopAprPools'
 
 const bluefinExchangeDataTools: AllowedTools[] = ['getBluefinExchangeData', 'getBluefinTopAprPools']
-const cetusExchangeDataTools: AllowedTools[] = ['getCetusExchangeData']
+const cetusExchangeDataTools: AllowedTools[] = ['getCetusExchangeData', 'getCetusTopAprPools']
 const allTools: AllowedTools[] = [...bluefinExchangeDataTools, ...cetusExchangeDataTools]
 
 export async function POST(request: Request) {
@@ -71,6 +74,7 @@ export async function POST(request: Request) {
           getBluefinExchangeData,
           getBluefinTopAprPools,
           getCetusExchangeData,
+          getCetusTopAprPools,
         },
         onFinish: async ({ response }) => {
           if (session.user?.id) {
