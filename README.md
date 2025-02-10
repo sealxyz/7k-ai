@@ -2,13 +2,37 @@
 
 ## Description
 
-This is a chatbot that uses AI to answer questions about the Sui blockchain. It is built with Next.js, Shadcn, Lucid, and Vercel AI SDK.
+This is a chatbot that uses AI to answer questions about the Sui blockchain and its ecosystem. 
+
+Built with: 
+
+- Next.js
+- Shadcn
+- PostgreSQL & pgVector
+- Vercel ai sdk
+- OpenAI
+- Sui wallet adapter
+- Atoma
+- Bluefin
+- Cetus 
+- Aftermath
 
 ### Features
 
-- [ ]
+- Chat with the chatbot about the Sui blockchain and its ecosystem.
+- Inte
+- Use the chatbot to get information about the Sui blockchain.
+- Use the chatbot to get information about the Sui blockchain.
+- Use the chatbot to get information about the Sui blockchain.
+- Use the chatbot to get information about the Sui blockchain.
+
 
 ### Tech Stack
+
+- Node >= 22
+- Yarn
+- Next.js
+- PostgreSQL & pgVector
 
 ---
 
@@ -35,6 +59,9 @@ cp .env.example .env
 ```
 
 Environment variables needed:
+
+* 
+
 
 ---
 
