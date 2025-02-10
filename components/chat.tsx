@@ -55,7 +55,6 @@ export function Chat({
         <ChatHeader
           chatId={id}
           selectedModelId={selectedModelId}
-          selectedVisibilityType={selectedVisibilityType}
           isReadonly={isReadonly}
         />
 

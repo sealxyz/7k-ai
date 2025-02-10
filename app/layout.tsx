@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Toaster } from 'sonner'
 import { ThemeProvider } from '@/components/theme-provider'
-import { WalletProviders } from '@/components/wallet-providers'
+import { DappKitProvider } from '@/components/dappkit-provider'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -52,7 +52,7 @@ export default async function RootLayout({
         />
       </head>
       <body className="antialiased">
-        <WalletProviders>
+        <DappKitProvider>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -62,7 +62,7 @@ export default async function RootLayout({
             <Toaster position="top-center" />
             {children}
           </ThemeProvider>
-        </WalletProviders>
+        </DappKitProvider>
       </body>
     </html>
   )

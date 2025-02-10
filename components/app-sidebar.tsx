@@ -2,11 +2,8 @@
 
 import type { User } from 'next-auth';
 import { useRouter } from 'next/navigation';
-import { useWallets, useConnectWallet, useCurrentAccount } from '@mysten/dapp-kit';
-
 import { PlusIcon } from '@/components/icons';
 import { SidebarHistory } from '@/components/sidebar-history';
-import { SidebarUserNav } from '@/components/sidebar-user-nav';
 import { SidebarWallet } from '@/components/sidebar-wallet';
 import { Button } from '@/components/ui/button';
 import {
@@ -69,7 +66,7 @@ export function AppSidebar({ user }: { user: User | undefined }) {
         <div className="flex flex-col gap-3">
           {/* {user && <SidebarUserNav user={user} />} */}
           <SidebarWallet /> 
-          </div>
+        </div>
       </SidebarFooter>
     </Sidebar>
   );
