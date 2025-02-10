@@ -9,8 +9,6 @@ import dotenv from 'dotenv';
 
 dotenv.config({ path: '.env' });
 
-// const COINGECKO_API_URL = 'https://api.coingecko.com/api/v3/simple/price';
-// const COINGECKO_API_KEY = process.env.COINGECKO_API_KEY; 
 const SPOT_API_URL = 'https://swap.api.sui-prod.bluefin.io/api/v1'
 const suiClient = new SuiClientV2({ url: 'https://fullnode.mainnet.sui.io:443' });
 const qc = new QueryChain(suiClient);
@@ -46,6 +44,11 @@ async function fetchPoolTransactions(poolId, userAddress, type) {
       if (!Array.isArray(json)) {
         console.error("Error: Expected an array but got something else.");
         return;
+      }
+
+      console.log("Total transactions found:", json.length);
+      if (json.length > 0) {
+        console.log("First transaction:", json[0]);
       }
 
       const filteredTxs = json.filter(tx => tx.sender.toLowerCase() === userAddress.toLowerCase());

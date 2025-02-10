@@ -6,19 +6,25 @@
 npx ts-node scripts/bluefinTest.mjs
 ```
 
-### 2. Run atoma client test
+### 2. Run sui test
+
+```bash
+npx ts-node scripts/suiTest.mjs
+```
+
+### 3. Run atoma client test
 
 ```bash
 npx ts-node scripts/atomaTest.mjs
 ```
 
-### 3. Run cetus client
+### 4. Run cetus client
 
 ```bash
 npx ts-node scripts/cetusTest.mjs
 ```
 
-### 4. Run aftermath client
+### 5. Run aftermath client
 
 ```bash
 npx ts-node scripts/aftermathTest.mjs
