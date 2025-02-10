@@ -12,16 +12,17 @@ export const getBluefinUserLpPositions = tool({
     try {
       const bluefinClient = new BluefinClient()
       const atomaClient = new AtomaClient()
-      const pools = await bluefinClient.getPoolsInfo(poolsAddresses, tokenAddress, limit)
+      // const pools = await bluefinClient.getPoolsInfo(poolsAddresses, tokenAddress, limit)
 
-      const prompt = `
-      The following is a list of pools with their apr and tvl:
-      ${JSON.stringify(pools)}
+      // const prompt = `
+      // The following is a list of pools with their apr and tvl:
+      // ${JSON.stringify(pools)}
+      // 
+      // Please format the output to be human readable and make it pretty.
+      // `
 
-      Please format the output to be human readable and make it pretty.
-      `
-
-      return await atomaClient.getChatCompletition(prompt)
+      //return await atomaClient.getChatCompletition(prompt)
+      return 'No pools found'
     } catch (error) {
       console.error('Error initializing BluefinClient:', error)
     }
